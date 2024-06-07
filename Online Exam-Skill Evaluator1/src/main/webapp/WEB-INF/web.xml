@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Online Exam-Skill Evaluator1</display-name>
+  <welcome-file-list>
+    <welcome-file>register.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>admin.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>adminlogin.jsp</welcome-file> 
+    <welcome-file>table.jsp</welcome-file>
+    <welcome-file>Update.jsp</welcome-file>
+    <welcome-file>question.html</welcome-file>   
+     <welcome-file>exam.jsp</welcome-file> 
+      <welcome-file>results.jsp</welcome-file> 
+      <welcome-file>ViewExam.jsp</welcome-file> 
+        
+  </welcome-file-list>
+</web-app>
