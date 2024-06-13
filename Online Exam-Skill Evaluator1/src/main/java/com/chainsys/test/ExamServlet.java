@@ -1,12 +1,9 @@
 package com.chainsys.test;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,63 +12,75 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.chainsys.dao.ExamDetails;
 import com.chainsys.model.Exam;
-import com.chainsys.util.DBConnection;
 
+
+/**
+ * Servlet implementation class ExamServlet
+ */
 @WebServlet("/ExamServlet")
 public class ExamServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Exam exam=new Exam();
+	ExamDetails details= new ExamDetails();
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ExamServlet() {
+        super();
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		doGet(request, response);
+		int examId=Integer.parseInt(request.getParameter("examId"));
 		String examName = request.getParameter("examName");
-		String examDate = request.getParameter("examDate");
+		String examDatestr = request.getParameter("examDate");
 		int duration = Integer.parseInt(request.getParameter("duration"));
 		int totalMarks = Integer.parseInt(request.getParameter("totalMarks"));
+		exam.setExamId(examId);
+		exam.setExamName(examName);
+		exam.setExamDate(examDatestr);
+		exam.setDuration(duration);
+		exam.setTotalMarks(totalMarks);
+		 try {
+				details.insert(exam);
+				
+					 
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
 
-		DBConnection dbconnection = new DBConnection();
-
-		try (Connection conn = dbconnection.getConnection()) {
-			String query = "insert into exams (exam_name, exam_date, duration, total_marks) values (?, ?, ?, ?)";
-			try (PreparedStatement prepare = conn.prepareStatement(query)) {
-				prepare.setString(1, examName);
-				prepare.setString(2, examDate);
-				prepare.setInt(3, duration);
-				prepare.setInt(4, totalMarks);
-
-				int rows = prepare.executeUpdate();
-				if (rows > 0) {
-					response.getWriter().println("Exam inserted successfully!");
-				} else {
-					response.getWriter().println("Failed to insert exam.");
-				}
+				e.printStackTrace();
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			response.getWriter().println("Error: " + e.getMessage());
-		}
+			  request.setAttribute("exam",exam);
+			  ArrayList<Exam> list=null;
+			  try {
+					
+					 list=details.getAllExam();
 
-		List<Exam> exams = new ArrayList<>();
-		try (Connection connection = dbconnection.getConnection()) {
-			String query = "select * from exams";
-			try (PreparedStatement prepare = connection.prepareStatement(query)) {
-				ResultSet rs = prepare.executeQuery();
-				while (rs.next()) {
-					Exam exam = new Exam();
-					exam.setExamId(rs.getInt("exam_id"));
-					exam.setExamName(rs.getString("exam_name"));
-					exam.setExamDate(rs.getDate("exam_date"));
-					exam.setDuration(rs.getInt("duration"));
-					exam.setTotalMarks(rs.getInt("total_marks"));
-					exams.add(exam);
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
 				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		request.setAttribute("exams", exams);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ViewExam.jsp");
-		dispatcher.forward(request, response);
+			 
+		      request.setAttribute("list",list);
+				
+			  RequestDispatcher dispatcher = request.getRequestDispatcher("ViewDetails.jsp");
+			  dispatcher.forward(request, response);
 	}
 }

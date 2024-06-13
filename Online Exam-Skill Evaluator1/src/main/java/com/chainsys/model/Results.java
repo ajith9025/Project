@@ -31,6 +31,7 @@ public class Results {
 		this.markObtained = markObtained;
 	}
 	
+	
 	public Results(int id, int userId, int examId, int markObtained) {
 		super();
 		this.id = id;
@@ -38,15 +39,12 @@ public class Results {
 		this.examId = examId;
 		this.markObtained = markObtained;
 	}
-	
+	public Results() {
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
 		return "Results [id=" + id + ", userId=" + userId + ", examId=" + examId + ", markObtained=" + markObtained
 				+ "]";
 	}
-	
-	
-	
-	
-
 }

@@ -16,15 +16,15 @@
             margin-bottom: 10px;
         }
         select {
-            width: 50%;
+            width: 25%;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
         }
         input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #4CAF50;
+            padding: 5px 10px;
+            background-color: #838398;
             color: white;
             border: none;
             border-radius: 4px;
@@ -37,13 +37,14 @@
 </head>
 <body>
     <h2>Online Exam</h2>
-    <form action="">
+    <form action="QuestionServlet" method="get">
         <label for="language">Exam Name:</label>
         <select id="language" name="language">
-            <option value="java">Java</option>
-            <option value="css">CSS</option>
-            <option value="html">HTML</option>
-            <option value="python">Python</option>
+            <option>All Question</option>
+            <option>Java</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>Python</option>
         </select><br><br>
         <input type="submit" value="Submit">
     </form>

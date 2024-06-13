@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
     <title>Insert Data</title>
@@ -56,8 +56,9 @@
 </head>
 <body>
     <h2>Insert Results</h2>
-      <form action="" method="post">
+      <form action="ResultsServlet" method="post">
         <input type="hidden" name="action" value="insertResult">
+        ID: <input type="number" name="Id"><br>
         User ID: <input type="number" name="userId"><br>
         Exam ID: <input type="number" name="examId"><br>
         Marks Obtained: <input type="number" name="marksObtained"><br>

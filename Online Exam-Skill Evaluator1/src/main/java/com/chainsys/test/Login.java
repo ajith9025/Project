@@ -48,6 +48,21 @@ public class Login extends HttpServlet {
 			response.sendRedirect("index.html");
 		
 	    }
-
+		 /*if (isValidUser(email, password)) {
+	            // Set user session and redirect to homepage
+	            request.getSession().setAttribute("user", email);
+	            response.sendRedirect("index.jsp");
+	        } else {
+	            // Redirect back to login with error message
+	            response.sendRedirect("login.jsp?error=Invalid credentials");
+	        }
+	    }
+	    
+	    private boolean isValidUser(String email, String password) {
+	        // Implement your user validation logic here
+	        return "user@example.com".equals(email) && "password".equals(password);
+	    }*/
 	}
 }
+
+

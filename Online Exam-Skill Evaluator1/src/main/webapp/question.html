@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Add Question</title>
     <style>
@@ -52,9 +52,11 @@
 </head>
 <body>
     <h2>Add Question</h2>
-    <form action="QuestionServlet" method="post">
+    <form action="Question" method="post">
         <label for="examId">Exam ID:</label><br>
         <input type="number" name="examId" id="examId"><br>
+        <label for="examName">Exam Name:</label><br>
+        <input type="text" name="examName" id="examName"><br>
         <label for="questionText">Question Text:</label><br>
         <textarea name="questionText" id="questionText"></textarea><br>
         <label for="option1">Option 1:</label><br>
@@ -69,5 +71,6 @@
         <input type="text" name="correctAnswer" id="correctAnswer"><br>
         <input type="submit" value="Submit">
     </form>
+    
 </body>
 </html>

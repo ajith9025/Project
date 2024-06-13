@@ -1,30 +1,26 @@
 package com.chainsys.test;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.chainsys.dao.QuestionView;
-import com.chainsys.model.AddQuestion;
+
+import com.chainsys.dao.ExamDetails;
+import com.chainsys.dao.QuestionDetails;
 
 /**
- * Servlet implementation class QuestionServlet
+ * Servlet implementation class DeleteQuestionServlet
  */
-@WebServlet("/QuestionServlet")
-public class QuestionServlet extends HttpServlet {
+@WebServlet("/DeleteQuestionServlet")
+public class DeleteQuestionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	AddQuestion question= new AddQuestion();
-	QuestionView view=new QuestionView();
-	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public QuestionServlet() {
+    public DeleteQuestionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,18 +31,6 @@ public class QuestionServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		  try {
-	            QuestionView view = new QuestionView();
-	            ArrayList<AddQuestion> list = view.getAllQuestion();
-	           
-	            
-	            request.setAttribute("list", list);
-	            request.getRequestDispatcher("question1.jsp").forward(request, response);
-	        } catch (ClassNotFoundException | SQLException e) {
-	            e.printStackTrace();
-		
-	        }
-		
 	}
 
 	/**
@@ -55,6 +39,15 @@ public class QuestionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		  
+		int examId = Integer.parseInt(request.getParameter("examId"));
+
+        try {
+            QuestionDetails.delete(examId);
+            response.sendRedirect("success.jsp");
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("error.jsp");
+        }
 	}
+
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
     }
     
     .start-button {
-        background-color: #4CAF50;
+        background-color: red;
         color: white;
         padding: 15px 30px;
         border: none;
@@ -47,7 +47,7 @@
     }
     
     .start-button:hover {
-        background-color: #45a049;
+        background-color: black;
     }
 </style>
  <script>

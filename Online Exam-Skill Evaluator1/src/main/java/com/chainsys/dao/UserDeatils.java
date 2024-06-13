@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.chainsys.model.AddQuestion;
+import com.chainsys.model.Exam;
 import com.chainsys.model.Register;
 import com.chainsys.util.DBConnection;
 
@@ -90,6 +91,23 @@ public class UserDeatils implements  User{
 	        e.printStackTrace();
 	    }
 	}
+	public static void update(Register register) throws ClassNotFoundException, SQLException {
+		  DBConnection dbconnection = new DBConnection();
+		    Class.forName("com.mysql.cj.jdbc.Driver");
+		    
+		    try {
+		        Connection connection = dbconnection.getConnection();
+		        String query = "UPDATE users SET username = ?, password = ?, contact_no = ? WHERE email = ?";
+		        PreparedStatement prepare = connection.prepareStatement(query);
+		        prepare.setString(1, register.getUsername());
+		        prepare.setString(2, register.getPassword());
+		        prepare.setString(3, register.getContactno());
+		        prepare.setString(4, register.getEmail());
+	    } catch (ClassNotFoundException | SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
 }
 
 

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
     <title>Insert Data</title>
@@ -58,6 +58,7 @@
     <h2>Insert Exam</h2>
     <form action="ExamServlet" method="post">
         <input type="hidden" name="action" value="Exam">
+        Exam ID: <input type="text" name="examId"><br>
         Exam Name: <input type="text" name="examName"><br>
         Exam Date: <input type="date" name="examDate"><br>
         Duration (in minutes): <input type="number" name="duration"><br>

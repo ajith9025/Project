@@ -1,8 +1,9 @@
 package com.chainsys.model;
 
 public class AddQuestion {
-
+   
 	int examId;
+	String examName;
 	String questionText;
 	String option1;
 	String option2;
@@ -14,6 +15,12 @@ public class AddQuestion {
 	}
 	public void setExamId(int examId) {
 		this.examId = examId;
+	}
+	public String getExamName() {
+		return examName;
+	}
+	public void setExamName(String examName) {
+		this.examName = examName;
 	}
 	public String getQuestionText() {
 		return questionText;
@@ -51,10 +58,11 @@ public class AddQuestion {
 	public void setCorrectAnswer(String correctAnswer) {
 		this.correctAnswer = correctAnswer;
 	}
-	public AddQuestion(int examId, String questionText, String option1, String option2, String option3, String option4,
-			String correctAnswer) {
+	public AddQuestion(int examId, String examName, String questionText, String option1, String option2, String option3,
+			String option4, String correctAnswer) {
 		super();
 		this.examId = examId;
+		this.examName = examName;
 		this.questionText = questionText;
 		this.option1 = option1;
 		this.option2 = option2;
@@ -62,12 +70,16 @@ public class AddQuestion {
 		this.option4 = option4;
 		this.correctAnswer = correctAnswer;
 	}
+	public AddQuestion() {
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
-		return "AddQuestion [examId=" + examId + ", questionText=" + questionText + ", option1=" + option1
-				+ ", option2=" + option2 + ", option3=" + option3 + ", option4=" + option4 + ", correctAnswer="
-				+ correctAnswer + "]";
+		return "AddQuestion [examId=" + examId + ", examName=" + examName + ", questionText=" + questionText
+				+ ", option1=" + option1 + ", option2=" + option2 + ", option3=" + option3 + ", option4=" + option4
+				+ ", correctAnswer=" + correctAnswer + "]";
 	}
 	
-
+	
 }
+

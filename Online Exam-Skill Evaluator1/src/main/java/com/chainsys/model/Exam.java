@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Exam {
 	int examId;
 	String examName;
-	Date examDate;
+	String examDate;
 	int duration;
 	int totalMarks;
 	
@@ -23,11 +23,11 @@ public class Exam {
 		this.examName = examName;
 	}
 	
-	public Date getExamDate() {
+	public String getExamDate() {
 		return examDate;
 	}
-	public void setExamDate(Date date) {
-		this.examDate = date;
+	public void setExamDate(String examDatestr) {
+		this.examDate = examDatestr;
 	}
 	public int getDuration() {
 		return duration;
@@ -41,7 +41,7 @@ public class Exam {
 	public void setTotalMarks(int totalMarks) {
 		this.totalMarks = totalMarks;
 	}
-	public Exam(int examId, String examName, Date examDate, int duration, int totalMarks) {
+	public Exam(int examId, String examName, String examDate, int duration, int totalMarks) {
 		super();
 		this.examId=examId;
 		this.examName = examName;
