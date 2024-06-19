@@ -1,16 +1,16 @@
 package com.chainsys.model;
 
 public class Register {
-	int id;
+	int userId;
 	String username;
 	String password;
 	String email;
     String contactno;
-	public int getId() {
-		return id;
+	public int getUserId() {
+		return userId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getUsername() {
 		return username;
@@ -38,9 +38,9 @@ public class Register {
 		this.contactno = contactno;
 	}
 	
-	public Register(int id, String username, String password, String email, String contactno) {
+	public Register(int userId, String username, String password, String email, String contactno) {
 		super();
-		this.id = id;
+		this.userId = userId;
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -51,9 +51,11 @@ public class Register {
 	}
 	@Override
 	public String toString() {
-		return "Register [id=" + id + ", username=" + username + ", password=" + password + ", email=" + email
+		return "Register [userId=" + userId + ", username=" + username + ", password=" + password + ", email=" + email
 				+ ", contactno=" + contactno + "]";
 	}
+	
+	
 
 	
 

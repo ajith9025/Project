@@ -7,8 +7,8 @@
 </head>
 <body>
     <h2>Delete User</h2>
-    <form action="UserServlet" method="post">
-        Email: <input type="text" name="email"><br>
+    <form action="DeleteUserServlet" method="post">
+        userId: <input type="number" name="userId"><br>
         <input type="submit" value="Delete">
     </form>
 </body>

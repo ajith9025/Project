@@ -9,6 +9,8 @@
 <body>
 	<h2>Update user</h2>
 	<form action="UpdateUserServlet" method="post">
+	    <label> UserId </label> 
+		<input type="number" name="userid"><br>
 		<label> Username </label> 
 		<input type="text" name="username"><br>
 		<label>Password</label> 

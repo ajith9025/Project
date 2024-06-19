@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,12 +70,44 @@ form{
   opacity: 1;
 }
 </style>
+
+<script>
+  function validateForm() {
+    
+   
+    var email = document.forms["loginForm"]["email"].value;
+    var password = document.forms["loginForm"]["password"].value;
+    
+    if (email == "") {
+      alert("Email must be filled out");
+      return false;
+    }
+    
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.match(emailRegex)) {
+      alert("Invalid email format");
+      return false;
+    }
+    
+    if (password == "") {
+      alert("Password must be filled out");
+      return false;
+    }
+ 
+    var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    if (!password.match(passwordRegex)) {
+      alert("Password must contain at least one uppercase letter, one lowercase letter, one number, and be at least 8 characters long");
+      return false;
+    }
+  
+  }
+  </script>
 </head>
 <body>
     <center>
     <h2>Login Form</h2>
     </center>
- <form action="Login" method="post">
+    <form name="loginForm" action="Login" method="post" onsubmit="return validateForm()"> 
   <div class="input-container">
     <i class="fa fa-envelope icon"></i>
     <input class="input-field" type="email" placeholder="Email" name="email" required>

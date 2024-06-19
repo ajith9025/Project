@@ -7,46 +7,97 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
         }
-        form {
-            margin: 20px;
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        label {
-            display: block;
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        .instructions {
+            margin-bottom: 20px;
+        }
+
+        p {
             margin-bottom: 10px;
+            line-height: 2;
         }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
         select {
-            width: 25%;
             padding: 8px;
-            border: 1px solid #ccc;
+            font-size: 16px;
             border-radius: 4px;
-            box-sizing: border-box;
+            border: 1px solid #ccc;
         }
-        input[type="submit"] {
-            padding: 5px 10px;
-            background-color: #838398;
+
+        .start-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: orange;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+
+        .start-button:hover {
+            background-color: black;
         }
     </style>
 </head>
 <body>
-    <h2>Online Exam</h2>
+
+    <div class="container">
+        <header>
+            <h1>Online Test Instructions</h1>
+        </header>
+        <section class="instructions">
+            <p>This is a FREE online test.Beware of scammers who ask for money to attend this test.</p>
+            <p>Total number of questions: 10.</p>
+            <p>Time allotted: 10 minutes.</p>
+            <p>Each question carries 1 mark, there are no negative marks.</p>
+            <p>DO NOT refresh the page.</p>
+            <p>All the best! Start the exam below.</p>
+        </section>
+    </div>
+
     <form action="QuestionServlet" method="get">
         <label for="language">Exam Name:</label>
         <select id="language" name="language">
-            <option>All Question</option>
             <option>Java</option>
             <option>HTML</option>
             <option>CSS</option>
             <option>Python</option>
         </select><br><br>
-        <input type="submit" value="Submit">
+        <button class="start-button">Start Test</button>
     </form>
+
 </body>
 </html>

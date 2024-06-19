@@ -1,16 +1,16 @@
 package com.chainsys.model;
 
 public class Results {
-    int id;
+    int resultId;
 	int userId;
 	int examId;
-	int markObtained;
+	int marksObtained;
 	
-	public int getId() {
-		return id;
+	public int getResultId() {
+		return resultId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setResultId(int ResultId) {
+		this.resultId = ResultId;
 	}
 	public int getUserId() {
 		return userId;
@@ -24,27 +24,26 @@ public class Results {
 	public void setExamId(int examId) {
 		this.examId = examId;
 	}
-	public int getMarkObtained() {
-		return markObtained;
+	public int getMarksObtained() {
+		return marksObtained;
 	}
-	public void setMarkObtained(int markObtained) {
-		this.markObtained = markObtained;
+	public void setMarksObtained(int marksObtained) {
+		this.marksObtained = marksObtained;
 	}
 	
-	
-	public Results(int id, int userId, int examId, int markObtained) {
+	public Results(int resultId, int userId, int examId, int marksObtained) {
 		super();
-		this.id = id;
+		this.resultId = resultId;
 		this.userId = userId;
 		this.examId = examId;
-		this.markObtained = markObtained;
+		this.marksObtained = marksObtained;
 	}
 	public Results() {
 		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
-		return "Results [id=" + id + ", userId=" + userId + ", examId=" + examId + ", markObtained=" + markObtained
+		return "Results [resultId=" + resultId + ", userId=" + userId + ", examId=" + examId + ", marksObtained=" + marksObtained
 				+ "]";
 	}
 }

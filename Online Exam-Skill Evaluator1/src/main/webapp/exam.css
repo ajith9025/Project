@@ -1,0 +1,79 @@
+@charset "ISO-8859-1";
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the main content */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Styling for the Table of Contents block */
+.wp-block-rank-math-toc-block {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.wp-block-rank-math-toc-block h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.wp-block-rank-math-toc-block ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.wp-block-rank-math-toc-block ul li {
+    margin-bottom: 5px;
+}
+
+.wp-block-rank-math-toc-block ul li a {
+    text-decoration: none;
+    color: #0073e6;
+}
+
+.wp-block-rank-math-toc-block ul li a:hover {
+    text-decoration: underline;
+}
+
+/* General paragraph style */
+p {
+    margin-bottom: 15px;
+}
+
+/* Styling for headings */
+.wp-block-heading {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* Styling for images */
+.wp-block-image {
+    margin-bottom: 20px;
+}
+
+.wp-block-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Styling links */
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

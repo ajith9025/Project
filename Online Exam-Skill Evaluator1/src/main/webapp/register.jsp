@@ -72,27 +72,70 @@ form{
 .btn:hover {
   opacity: 1; 
 }
+
+.error-message {
+  color: red;
+}
+
 </style>
+
+<script>
+function validateForm() {
+  var username = document.forms["signupForm"]["username"].value;
+  var password = document.forms["signupForm"]["password"].value;
+  var email = document.forms["signupForm"]["email"].value;
+  var contact_no = document.forms["signupForm"]["contact_no"].value;
+  
+  if (username == "") {
+    alert("Username must be filled out");
+    return false;
+  }
+  
+  if (password == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+  
+  if (email == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  
+  // Regular expression for validating email format
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email.match(emailRegex)) {
+    alert("Invalid email format");
+    return false;
+  }
+  
+  // Regular expression for validating mobile number format
+  var mobileRegex = /^\d{10}$/;
+  if (!contact_no.match(mobileRegex)) {
+    alert("Invalid mobile number format. Please enter a 10-digit number");
+    return false;
+  }
+}
+</script>
 
 </head>
 <body>
   <h2>Register Form</h2>
-<form action="Registeration" method="post">
+<form name="signupForm" action="Registeration" method="post" onsubmit="return validateForm()">
   <div class="input-container">
     <i class="fa fa-user icon"></i>
     <input class="input-field" type="text" placeholder="Username" name="username" required>
   </div> 
   <div class="input-container">
     <i class="fa fa-key icon"></i>
-    <input class="input-field" type="password" placeholder="Password" name="password"required>
+    <input class="input-field" type="password" placeholder="Password" name="password" required>
   </div>
   <div class="input-container">
     <i class="fa fa-envelope icon"></i>
-    <input class="input-field" type="email" placeholder="Email" name="email"required>
+    <input class="input-field" type="email" placeholder="Email" name="email" required>
   </div>
   <div class="input-container">
     <i class="fa fa-address-book icon"></i>
-    <input class="input-field" type="text" placeholder="Contact no" name="contact_no"required>
+    <input class="input-field" type="text" placeholder="Contact no" name="contact_no" required>
   </div>
 
   <button type="submit" class="btn">Register</button>

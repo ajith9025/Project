@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class DBConnection {
 
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-		String url = "jdbc:mysql://localhost:3306/my_project_demo10";
+		String url = "jdbc:mysql://localhost:3306/my_project_day13";
 		String userName = "root";
 		String password = "ajith123";
 		String query = "select * from users";
@@ -23,7 +23,7 @@ public class DBConnection {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_project_demo10", "root", "ajith123");
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/my_project_day13", "root", "ajith123");
 		return connection;
 	}
 }

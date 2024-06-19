@@ -84,7 +84,7 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1em 0;
+    padding: 30px;
 }
 
 footer .container {
@@ -147,8 +147,8 @@ footer .container {
          <nav>
             <ul class="navbar">
                <li><a class="active" href="#">Home</a></li>
-               <li><a href="#" onclick="document.getElementById('loginModal').style.display='block'">Login</a></li>
-               <li><a href="#" onclick="document.getElementById('signupModal').style.display='block'">Sign up</a></li>
+               <li><a href="login.jsp">Login</a></li>
+               <li><a href="register.jsp">Sign up</a></li>
             </ul>
         </nav>
         <h1>Online Exam</h1>
@@ -157,7 +157,7 @@ footer .container {
                 <div class="container">
                     <h2>Welcome to the Online Examination Skill Evaluator</h2>
                     <p>Assess your skills and improve your knowledge through our comprehensive online exams. Sign up today and start your learning journey!</p>
-                    <a href="#" class="btn" onclick="document.getElementById('signupModal').style.display='block'">Get Started</a>
+                    <a href="register.jsp">Get Started</a>
                 </div>
             </section>
         </main>
@@ -166,59 +166,6 @@ footer .container {
                 <p>&copy; 2024 Online Examination Skill Evaluator. All rights reserved.</p>
             </div>
         </footer>
-
-       
-        <div id="loginModal" class="modal">
-          <div class="modal-content">
-            <span class="close" onclick="document.getElementById('loginModal').style.display='none'">&times;</span>
-            <div class="modal-body">
-              <h2>Login</h2>
-              <form action="Login" method="post">
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br><br>
-                <button type="submit">Login</button>
-              </form>
-            </div>
-          </div>
-        </div>
         
-        
-        
-        
-        
-        <div id="signupModal" class="modal">
-          <div class="modal-content">
-       <span class="close" onclick="document.getElementById('signupModal').style.display='none'">&times;</span>
-            <div class="modal-body">
-              <h2>Sign Up</h2>
-              <form action="Registeration" method="post">
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br><br>
-                <label for="contact">Contact no:</label><br>
-                <input type="text" id="contact_no" name="contact_no" required><br><br>
-                <button type="submit">Sign Up</button>
-              </form>
-            </div>
-          </div>
-        </div>
-
-<script>
-window.onclick = function(event) {
-    if (event.target == document.getElementById('loginModal')) {
-        document.getElementById('loginModal').style.display = "none";
-    }
-    if (event.target == document.getElementById('signupModal')) {
-        document.getElementById('signupModal').style.display = "none";
-    }
-}
-s
-</script>
-
 </body>
 </html>

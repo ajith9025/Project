@@ -6,27 +6,30 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.chainsys.dao.ExamDetails;
 import com.chainsys.dao.UserDeatils;
-import com.chainsys.model.Register;
 
 /**
- * Servlet implementation class UpdateUserServlet
+ * Servlet implementation class DeleteUserServlet
  */
-@WebServlet("/UpdateUserServlet")
-public class UpdateUserServlet extends HttpServlet {
+@WebServlet("/DeleteUserServlet")
+public class DeleteUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateUserServlet() {
+    public DeleteUserServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -34,30 +37,17 @@ public class UpdateUserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// TODO Auto-generated method stub
 		doGet(request, response);
-		int userId=Integer.parseInt(request.getParameter("user_id"));
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String email = request.getParameter("email");
-		String contactno = request.getParameter("contact_no");
-		
-	    
-		Register register= new Register();
-		register.setUserId(userId);
-		register.setUsername(username);
-		register.setPassword(password);
-		register.setEmail(email);
-		register.setContactno(contactno);
-		
-		try {
-            UserDeatils.update(register);
-            response.sendRedirect("success.jsp");
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("error.jsp");
-        }
-		
+		 int userId = Integer.parseInt(request.getParameter("userId"));
+
+	        try {
+	            UserDeatils.delete(userId);
+	            response.sendRedirect("success.jsp");
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            response.sendRedirect("error.jsp");
+	        }
 	}
 
 }

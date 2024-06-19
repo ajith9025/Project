@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-    <title>Insert Data</title>
+    <title>Results Data</title>
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -55,14 +55,14 @@
 </style>
 </head>
 <body>
-    <h2>Insert Results</h2>
+    <h2>Results Insert</h2>
       <form action="ResultsServlet" method="post">
         <input type="hidden" name="action" value="insertResult">
-        ID: <input type="number" name="Id"><br>
+        Result ID: <input type="number" name="resultId"><br>
         User ID: <input type="number" name="userId"><br>
         Exam ID: <input type="number" name="examId"><br>
         Marks Obtained: <input type="number" name="marksObtained"><br>
-        <input type="submit" value="Insert Result">
+        <input type="submit" value="submit">
     </form>
 </body>
 </html>

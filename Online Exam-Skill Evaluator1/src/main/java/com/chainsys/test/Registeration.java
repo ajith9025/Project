@@ -56,11 +56,12 @@ public class Registeration extends HttpServlet {
 			throws ServletException, IOException {
 
 		doGet(request, response);
+		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
 		String contactno = request.getParameter("contact_no");
-
+        
 		register.setUsername(username);
 		register.setPassword(password);
 		register.setEmail(email);
@@ -88,7 +89,7 @@ public class Registeration extends HttpServlet {
 
 		request.setAttribute("list", list);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("table.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 		dispatcher.forward(request, response);
 		
 		

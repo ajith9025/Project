@@ -1,4 +1,4 @@
-<%@page import="com.chainsys.model.Register"%>
+<%@page import="com.chainsys.model.Results"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList"%>
@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Register Table</title>
+<title>Results table</title>
 </head>
 <style>
 table {
@@ -52,47 +52,49 @@ a:hover {
 </style>
 
 <body>
-	<h2>Register Details</h2>
+	<h2>Results Details</h2>
 
 	<table>
 		<tr>
-            <th>UserId</th>
-			<th>Username</th>
-			<th>Password</th>
-			<th>Email</th>
-			<th>Contact_no</th>
+			<th>Result Id</th>
+			<th>User Id</th>
+			<th>Exam Id</th>
+			<th>Marks Obtained</th>
 			<th>Delete</th>
 			<th>Edit</th>
+
 
 		</tr>
 
 
 		<%
 		// RegisterDetails details = new RegisterDetails();
-		ArrayList<Register> list = (ArrayList<Register>) request.getAttribute("list");
+		ArrayList<Results> list = (ArrayList<Results>) request.getAttribute("list");
 		
 		if (list != null) {
-			for (Register item : list) {
+			for (Results item : list) {
 		%>
 		<tr>
-            <td><%=item.getUserId()%></td>
-			<td><%=item.getUsername()%></td>
-			<td><%=item.getPassword()%></td>
-			<td><%=item.getEmail()%></td>
-			<td><%=item.getContactno()%></td>
+		    <td><%=item.getResultId()%></td>
+			<td><%=item.getUserId()%></td>
+			<td><%=item.getExamId()%></td>
+			<td><%=item.getMarksObtained()%></td>
+			
 			<td>
-				<form action="" method="post">
+				<form>
+
 					<input type="hidden" name="action" value="Delete"> <input
-						type="hidden" name="deleteid" value="<%=item.getUserId()%>">
-						<button class="edit-btn" type="button"
-						onclick="location.href = 'deleteUser.jsp?editExamId=<%=item.getUserId()%>'">Delete</button>
+						type="hidden" name="deleteExamId" value="<%=item.getExamId()%>">
+					<button class="edit-btn" type="button"
+						onclick="location.href = 'delete.jsp?editExamId=<%=item.getExamId()%>'">Delete</button>
+
+
 				</form>
 			</td>
 			<td><input type="hidden" name="action" value="update"> <input
-				type="hidden" name="editemail" value="<%=item.getUserId()%>">
+				type="hidden" name="editExamId" value="<%=item.getExamId()%>">
 				<button class="edit-btn" type="button"
-					onclick="location.href = 'updateUser.jsp?editemail=<%=item.getUserId()%>'">Edit</button>
-
+					onclick="location.href = 'update.jsp?editid=<%=item.getExamId()%>'">Edit</button>
 
 			</td>
 		</tr>

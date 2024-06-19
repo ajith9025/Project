@@ -22,12 +22,13 @@ public class UserDeatils implements  User{
 		try 
 	   {
 		Connection connection = dbconnection.getConnection();
-		String query = "insert into users(username,password,email,contact_no)values(?,?,?,?)";
+		String query = "insert into users(user_id,username,password,email,contact_no)values(?,?,?,?,?)";
 		PreparedStatement prepare = connection.prepareStatement(query);
-		prepare.setString(1, register.getUsername());
-		prepare.setString(2, register.getPassword());
-		prepare.setString(3, register.getEmail());
-		prepare.setString(4, register.getContactno());
+		prepare.setInt(1,register.getUserId());
+		prepare.setString(2, register.getUsername());
+		prepare.setString(3, register.getPassword());
+		prepare.setString(4, register.getEmail());
+		prepare.setString(5, register.getContactno());
 		int execute = prepare.executeUpdate();
 		System.out.println(execute);
 	   }
@@ -41,18 +42,18 @@ public class UserDeatils implements  User{
 		ArrayList<Register> list= new ArrayList<Register>();
 	try {
 			Connection connection = dbconnection.getConnection();
-			String query = "select username,password,email,contact_no from users";
+			String query = "select user_id,username,password,email,contact_no from users";
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(query);
 			while (rs.next()) {
-			  
+			    int userId=rs.getInt("user_id");
 				String username = rs.getString("username");
 				String password = rs.getString("password");
 				String email = rs.getString("email");
 				String contact_no = rs.getString("contact_no");
 			
 				Register register = new Register();
-				
+		        register.setUserId(userId);
 			    register.setUsername(username);
 				register.setPassword(password);
 				register.setEmail(email);
@@ -97,17 +98,34 @@ public class UserDeatils implements  User{
 		    
 		    try {
 		        Connection connection = dbconnection.getConnection();
-		        String query = "UPDATE users SET username = ?, password = ?, contact_no = ? WHERE email = ?";
+		        String query = "UPDATE users SET username = ?, password = ?, contact_no = ? , email = ? where user_id=?";
 		        PreparedStatement prepare = connection.prepareStatement(query);
 		        prepare.setString(1, register.getUsername());
 		        prepare.setString(2, register.getPassword());
 		        prepare.setString(3, register.getContactno());
 		        prepare.setString(4, register.getEmail());
+		        prepare.setInt(5,register.getUserId());
+		        
+		   
+		        
 	    } catch (ClassNotFoundException | SQLException e) {
 	        e.printStackTrace();
 	    }
 	}
 	
+	public static void delete(int userId) throws ClassNotFoundException, SQLException {
+	    DBConnection dbconnection = new DBConnection();
+	    Class.forName("com.mysql.cj.jdbc.Driver");
+	    try {
+	        Connection connection = dbconnection.getConnection();
+	        String query = "delete from users where user_id = ?";
+	        PreparedStatement prepare = connection.prepareStatement(query);
+	        prepare.setInt(1, userId);
+	        prepare.executeUpdate();
+	    } catch (ClassNotFoundException | SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
 }
 
 

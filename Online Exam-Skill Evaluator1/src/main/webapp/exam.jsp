@@ -25,7 +25,7 @@
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    
+
     input[type="text"],
     input[type="number"],
     input[type="date"],
@@ -52,17 +52,17 @@
     input[type="submit"]:hover {
         background-color: #0056b3;
     }
-</style>
+    </style>
 </head>
 <body>
     <h2>Insert Exam</h2>
     <form action="ExamServlet" method="post">
         <input type="hidden" name="action" value="Exam">
-        Exam ID: <input type="text" name="examId"><br>
-        Exam Name: <input type="text" name="examName"><br>
-        Exam Date: <input type="date" name="examDate"><br>
-        Duration (in minutes): <input type="number" name="duration"><br>
-        Total Marks: <input type="number" name="totalMarks"><br>
+        Exam ID: <input type="text" name="examId"required><br>
+        Exam Name: <input type="text" name="examName"required><br>
+        Exam Date: <input type="date" name="examDate"required><br>
+        Duration (in minutes): <input type="number" name="duration" required><br>
+        Total Marks: <input type="number" name="totalMarks"required><br>
         <input type="submit" value="Exam">
     </form>
 </body>

@@ -10,15 +10,13 @@ import com.chainsys.model.AddQuestion;
 import com.chainsys.util.DBConnection;
 
 public class QuestionView {
-	
-
 
 	public ArrayList<AddQuestion> getAllQuestion() throws SQLException, ClassNotFoundException {
 		DBConnection dbconnection = new DBConnection();
 		ArrayList<AddQuestion> list = new ArrayList<AddQuestion>();
 		try {
 			Connection connection = dbconnection.getConnection();
-			String query = "select * from questions";
+			String query = "select * from questions where exam_name='Java'";
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(query);
 			while (rs.next()) {
@@ -31,14 +29,14 @@ public class QuestionView {
 				String option4 = rs.getString("option4");
 				String correctAnswer = rs.getString("correct_answer");
 				AddQuestion question = new AddQuestion();
-			    question.setExamId(examId);
-			    question.setExamName(examName);
-			    question.setQuestionText(questionText);
-			    question.setOption1(option1);
-			    question.setOption2(option2);
-			    question.setOption3(option3);
-			    question.setOption4(option4);
-			    question.setCorrectAnswer(correctAnswer);
+				question.setExamId(examId);
+				question.setExamName(examName);
+				question.setQuestionText(questionText);
+				question.setOption1(option1);
+				question.setOption2(option2);
+				question.setOption3(option3);
+				question.setOption4(option4);
+				question.setCorrectAnswer(correctAnswer);
 				list.add(question);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
