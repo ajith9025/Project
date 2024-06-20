@@ -20,7 +20,7 @@ import com.chainsys.model.Results;
 @WebServlet("/ResultsServlet")
 public class ResultsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final int marksObtained = 0;
+	/* private static final int marksObtained = 0; */
 	Results results = new Results();
 	ResultsDetails rd = new ResultsDetails();
 

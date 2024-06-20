@@ -62,10 +62,7 @@ a:hover {
 			<th>Marks Obtained</th>
 			<th>Delete</th>
 			<th>Edit</th>
-
-
 		</tr>
-
 
 		<%
 		// RegisterDetails details = new RegisterDetails();

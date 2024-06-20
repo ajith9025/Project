@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import com.chainsys.model.Exam;
 import com.chainsys.model.Results;
 import com.chainsys.util.DBConnection;
 

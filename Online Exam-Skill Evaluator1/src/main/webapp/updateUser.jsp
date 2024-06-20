@@ -9,15 +9,15 @@
 <body>
 	<h2>Update user</h2>
 	<form action="UpdateUserServlet" method="post">
-	    <label> UserId </label> 
+	    <label for="userid"> UserId </label> 
 		<input type="number" name="userid"><br>
-		<label> Username </label> 
+		<label for="username"> Username </label> 
 		<input type="text" name="username"><br>
-		<label>Password</label> 
+		<label for="password">Password</label> 
 		<input type="password" name="password"><br>
-		<label>Email</label> 
+		<label for="email">Email</label> 
 		<input type="email" name="email"> <br>
-		<label>Contact no</label> <input type="text" name="contact_no"><br>
+		<label for="contact no">Contact no</label> <input type="text" name="contact_no"><br>
 		<br> <input type="submit" value="update">
 	</form>
 </body>

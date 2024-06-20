@@ -4,7 +4,8 @@
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Arrays"%>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>Questions</title>
 <style>
@@ -50,7 +51,7 @@ button:hover {
 </head>
 
 <body>
-	<form id="quizForm" action="CheckResults" method="post"
+	<form id="quizForm" action="ResultsViewServlet" method="get"
 		onsubmit="return validateForm();">
 		<%
 		ArrayList<AddQuestion> list = (ArrayList<AddQuestion>) request.getAttribute("list");

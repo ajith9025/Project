@@ -1,15 +1,11 @@
 package com.chainsys.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
-import com.chainsys.model.AddQuestion;
-import com.chainsys.model.Exam;
 import com.chainsys.model.Register;
 import com.chainsys.util.DBConnection;
 

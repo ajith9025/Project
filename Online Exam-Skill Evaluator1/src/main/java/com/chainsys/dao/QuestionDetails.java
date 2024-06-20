@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import com.chainsys.model.AddQuestion;
-import com.chainsys.test.Question;
 import com.chainsys.util.DBConnection;
 
 public class QuestionDetails {

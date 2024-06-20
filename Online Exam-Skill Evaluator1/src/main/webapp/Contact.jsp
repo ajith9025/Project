@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<title>Contact Us</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
@@ -81,15 +82,15 @@ function handleSubmit(event) {
   </div>
   <div class="row">
     <div class="column">
-      <img src="pexels-zen-chung-5537527.jpg" style="width:100%">
+      <img src="pexels-zen-chung-5537527.jpg" style="width:100%" alt="">
     </div>
     <div class="column">
       <form onsubmit="handleSubmit(event)">
-        <label>First Name</label>
+        <label for="firstname">First Name</label>
         <input type="text" id="fname" name="firstname" placeholder=" Enter Your  Firstname" required>
-        <label>Last Name</label>
+        <label for="lastname">Last Name</label>
         <input type="text" id="lname" name="lastname" placeholder=" Enter Your Lastname"required>
-        <label>Email</label>
+        <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder=" Enter Your Email"required>
         <label for="Exam Name">Exam Name</label>
          <select id="Exam" name="Exam">

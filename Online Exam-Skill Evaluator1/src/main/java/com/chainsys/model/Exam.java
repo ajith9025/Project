@@ -1,7 +1,5 @@
 package com.chainsys.model;
 
-import java.sql.Date;
-
 public class Exam {
 	int examId;
 	String examName;

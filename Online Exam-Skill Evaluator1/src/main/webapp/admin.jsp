@@ -74,9 +74,7 @@ form{
 </style>
 </head>
 <body>
-    <center>
     <h2>Admin Login</h2>
-    </center>
  <form action="adminlogin.jsp">
   <div class="input-container">
     <i class="fa fa-user icon"></i>

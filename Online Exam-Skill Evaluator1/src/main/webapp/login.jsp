@@ -104,9 +104,8 @@ form{
   </script>
 </head>
 <body>
-    <center>
+   
     <h2>Login Form</h2>
-    </center>
     <form name="loginForm" action="Login" method="post" onsubmit="return validateForm()"> 
   <div class="input-container">
     <i class="fa fa-envelope icon"></i>
